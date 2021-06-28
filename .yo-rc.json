@@ -43,6 +43,9 @@
     "clientThemeVariant": "",
     "languages": ["ro", "en"],
     "entities": ["Specializare", "Grad", "Medic", "Client", "Consultatie", "ConcluziiConsultatie"],
-    "lastLiquibaseTimestamp": 1624605635000
+    "lastLiquibaseTimestamp": 1624605635000,
+    "herokuAppName": "health-for-you-diploma-2021",
+    "herokuDeployType": "git",
+    "herokuJavaVersion": "11"
   }
 }
