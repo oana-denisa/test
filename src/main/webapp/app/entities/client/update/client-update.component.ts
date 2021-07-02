@@ -23,10 +23,10 @@ export class ClientUpdateComponent implements OnInit {
   usersSharedCollection: IUser[] = [];
 
   //
-  minDate: dayjs.Dayjs | undefined;
-  minDateString: any;
-  maxDate: dayjs.Dayjs | undefined;
-  maxDateString: any;
+  startDate: dayjs.Dayjs | undefined;
+  startDateString: any;
+  stopDate: dayjs.Dayjs | undefined;
+  stopDateString: any;
 
   editForm = this.fb.group({
     id: [],
@@ -51,11 +51,10 @@ export class ClientUpdateComponent implements OnInit {
         const today = dayjs().startOf('day');
         client.dataNastere = today;
 
-        //
-        this.minDate = dayjs().startOf('minute').add(-100, 'years');
-        this.minDateString = this.minDate.format(DATE_TIME_FORMAT);
-        this.maxDate = dayjs().startOf('minute');
-        this.maxDateString = this.maxDate.format(DATE_TIME_FORMAT);
+        this.startDate = dayjs().startOf('minute').add(-100, 'years');
+        this.startDateString = this.startDate.format(DATE_TIME_FORMAT);
+        this.stopDate = dayjs().startOf('minute');
+        this.stopDateString = this.stopDate.format(DATE_TIME_FORMAT);
       }
 
       this.updateForm(client);

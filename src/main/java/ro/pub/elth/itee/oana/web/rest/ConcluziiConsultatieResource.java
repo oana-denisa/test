@@ -29,7 +29,8 @@ import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
 
 /**
- * REST controller for managing {@link ro.pub.elth.itee.oana.domain.ConcluziiConsultatie}.
+ * REST controller for managing
+ * {@link ro.pub.elth.itee.oana.domain.ConcluziiConsultatie}.
  */
 @RestController
 @RequestMapping("/api")
@@ -53,7 +54,10 @@ public class ConcluziiConsultatieResource {
      * {@code POST  /concluzii-consultaties} : Create a new concluziiConsultatie.
      *
      * @param concluziiConsultatie the concluziiConsultatie to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new concluziiConsultatie, or with status {@code 400 (Bad Request)} if the concluziiConsultatie has already an ID.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with
+     *         body the new concluziiConsultatie, or with status
+     *         {@code 400 (Bad Request)} if the concluziiConsultatie has already an
+     *         ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/concluzii-consultaties")
@@ -72,13 +76,16 @@ public class ConcluziiConsultatieResource {
     }
 
     /**
-     * {@code PUT  /concluzii-consultaties/:id} : Updates an existing concluziiConsultatie.
+     * {@code PUT  /concluzii-consultaties/:id} : Updates an existing
+     * concluziiConsultatie.
      *
-     * @param id the id of the concluziiConsultatie to save.
+     * @param id                   the id of the concluziiConsultatie to save.
      * @param concluziiConsultatie the concluziiConsultatie to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated concluziiConsultatie,
-     * or with status {@code 400 (Bad Request)} if the concluziiConsultatie is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the concluziiConsultatie couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated concluziiConsultatie, or with status
+     *         {@code 400 (Bad Request)} if the concluziiConsultatie is not valid,
+     *         or with status {@code 500 (Internal Server Error)} if the
+     *         concluziiConsultatie couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/concluzii-consultaties/{id}")
@@ -107,14 +114,17 @@ public class ConcluziiConsultatieResource {
     }
 
     /**
-     * {@code PATCH  /concluzii-consultaties/:id} : Partial updates given fields of an existing concluziiConsultatie, field will ignore if it is null
+     * {@code PATCH  /concluzii-consultaties/:id} : Partial updates given fields of
+     * an existing concluziiConsultatie, field will ignore if it is null
      *
-     * @param id the id of the concluziiConsultatie to save.
+     * @param id                   the id of the concluziiConsultatie to save.
      * @param concluziiConsultatie the concluziiConsultatie to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated concluziiConsultatie,
-     * or with status {@code 400 (Bad Request)} if the concluziiConsultatie is not valid,
-     * or with status {@code 404 (Not Found)} if the concluziiConsultatie is not found,
-     * or with status {@code 500 (Internal Server Error)} if the concluziiConsultatie couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated concluziiConsultatie, or with status
+     *         {@code 400 (Bad Request)} if the concluziiConsultatie is not valid,
+     *         or with status {@code 404 (Not Found)} if the concluziiConsultatie is
+     *         not found, or with status {@code 500 (Internal Server Error)} if the
+     *         concluziiConsultatie couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/concluzii-consultaties/{id}", consumes = "application/merge-patch+json")
@@ -167,7 +177,8 @@ public class ConcluziiConsultatieResource {
      * {@code GET  /concluzii-consultaties} : get all the concluziiConsultaties.
      *
      * @param pageable the pagination information.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of concluziiConsultaties in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
+     *         of concluziiConsultaties in body.
      */
     @GetMapping("/concluzii-consultaties")
     @PreAuthorize(
@@ -200,7 +211,8 @@ public class ConcluziiConsultatieResource {
      * {@code GET  /concluzii-consultaties/:id} : get the "id" concluziiConsultatie.
      *
      * @param id the id of the concluziiConsultatie to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the concluziiConsultatie, or with status {@code 404 (Not Found)}.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the concluziiConsultatie, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/concluzii-consultaties/{id}")
     @PreAuthorize(
@@ -227,7 +239,8 @@ public class ConcluziiConsultatieResource {
     }
 
     /**
-     * {@code DELETE  /concluzii-consultaties/:id} : delete the "id" concluziiConsultatie.
+     * {@code DELETE  /concluzii-consultaties/:id} : delete the "id"
+     * concluziiConsultatie.
      *
      * @param id the id of the concluziiConsultatie to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.

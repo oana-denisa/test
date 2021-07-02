@@ -9,13 +9,6 @@
         Create or edit a Consultatie
       </h2>
 
-      <div *ngIf="medicSelectat.id">
-        {{ medicSelectat.numeSiPrenume }}
-        {{ intervalOralValidMedic }}
-        {{ clientSelectat.numeSiPrenume }}
-        {{ intervalOralValidClient }}
-      </div>
-
       <div>
         <jhi-alert-error></jhi-alert-error>
 
@@ -31,8 +24,8 @@
               id="field_dataOra"
               data-cy="dataOra"
               type="datetime-local"
-              [min]="minDateString"
-              [max]="maxDateString"
+              [min]="startDateString"
+              [max]="stopDateString"
               class="form-control"
               name="dataOra"
               formControlName="dataOra"

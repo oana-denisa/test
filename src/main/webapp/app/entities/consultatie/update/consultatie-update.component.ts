@@ -29,10 +29,10 @@ export class ConsultatieUpdateComponent implements OnInit, DoCheck {
 
   medicsSharedCollection: IMedic[] = [];
   clientsSharedCollection: IClient[] = [];
-  minDate: dayjs.Dayjs | undefined;
-  minDateString: any;
-  maxDate: dayjs.Dayjs | undefined;
-  maxDateString: any;
+  startDate: dayjs.Dayjs | undefined;
+  startDateString: any;
+  stopDate: dayjs.Dayjs | undefined;
+  stopDateString: any;
 
   intervalOralValidMedic = true;
   intervalOralValidClient = true;
@@ -62,10 +62,10 @@ export class ConsultatieUpdateComponent implements OnInit, DoCheck {
         consultatie.dataOra = today;
         //
         this.consultatieService.getListaConsultatii().subscribe(listaConsultatii => (this.listaConsultatii = listaConsultatii));
-        this.minDate = dayjs().startOf('minute');
-        this.minDateString = this.minDate.format(DATE_TIME_FORMAT);
-        this.maxDate = dayjs().startOf('minute').add(30, 'days');
-        this.maxDateString = this.maxDate.format(DATE_TIME_FORMAT);
+        this.startDate = dayjs().startOf('minute');
+        this.startDateString = this.startDate.format(DATE_TIME_FORMAT);
+        this.stopDate = dayjs().startOf('minute').add(30, 'days');
+        this.stopDateString = this.stopDate.format(DATE_TIME_FORMAT);
       }
 
       this.updateForm(consultatie);
@@ -83,10 +83,10 @@ export class ConsultatieUpdateComponent implements OnInit, DoCheck {
       this.medicSelectat = consultatieCreata.medic;
       for (const consultatie of this.listaConsultatii) {
         if (consultatie.medic!.id === this.medicSelectat.id) {
-          const dataOraDelay30Min = dayjs(consultatie.dataOra).startOf('minutes').add(30, 'minutes');
-          const dataOraInit = dayjs(consultatie.dataOra).startOf('minutes').add(-30, 'minutes');
+          const dataOraFinal = dayjs(consultatie.dataOra).startOf('minutes').add(30, 'minutes');
+          const dataOraInainte = dayjs(consultatie.dataOra).startOf('minutes').add(-30, 'minutes');
 
-          if (consultatieCreata.dataOra!.isBefore(dataOraDelay30Min) && consultatieCreata.dataOra!.isAfter(dataOraInit)) {
+          if (consultatieCreata.dataOra!.isBefore(dataOraFinal) && consultatieCreata.dataOra!.isAfter(dataOraInainte)) {
             this.intervalOralValidMedic = false;
             break;
           } else {
@@ -102,10 +102,10 @@ export class ConsultatieUpdateComponent implements OnInit, DoCheck {
       this.clientSelectat = consultatieCreata.client;
       for (const consultatie of this.listaConsultatii) {
         if (consultatie.client!.id === this.clientSelectat.id) {
-          const dataOraDelay30Min = dayjs(consultatie.dataOra).startOf('minutes').add(30, 'minutes');
-          const dataOraInit = dayjs(consultatie.dataOra).add(-30, 'minutes');
+          const dataOraFinal = dayjs(consultatie.dataOra).startOf('minutes').add(30, 'minutes');
+          const dataOraInainte = dayjs(consultatie.dataOra).add(-30, 'minutes');
 
-          if (consultatieCreata.dataOra!.isBefore(dataOraDelay30Min) && consultatieCreata.dataOra!.isAfter(dataOraInit)) {
+          if (consultatieCreata.dataOra!.isBefore(dataOraFinal) && consultatieCreata.dataOra!.isAfter(dataOraInainte)) {
             this.intervalOralValidClient = false;
             break;
           } else {

@@ -53,7 +53,9 @@ public class ClientResource {
      * {@code POST  /clients} : Create a new client.
      *
      * @param client the client to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new client, or with status {@code 400 (Bad Request)} if the client has already an ID.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with
+     *         body the new client, or with status {@code 400 (Bad Request)} if the
+     *         client has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/clients")
@@ -73,11 +75,13 @@ public class ClientResource {
     /**
      * {@code PUT  /clients/:id} : Updates an existing client.
      *
-     * @param id the id of the client to save.
+     * @param id     the id of the client to save.
      * @param client the client to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated client,
-     * or with status {@code 400 (Bad Request)} if the client is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the client couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated client, or with status {@code 400 (Bad Request)} if the
+     *         client is not valid, or with status
+     *         {@code 500 (Internal Server Error)} if the client couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/clients/{id}")
@@ -106,14 +110,17 @@ public class ClientResource {
     }
 
     /**
-     * {@code PATCH  /clients/:id} : Partial updates given fields of an existing client, field will ignore if it is null
+     * {@code PATCH  /clients/:id} : Partial updates given fields of an existing
+     * client, field will ignore if it is null
      *
-     * @param id the id of the client to save.
+     * @param id     the id of the client to save.
      * @param client the client to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated client,
-     * or with status {@code 400 (Bad Request)} if the client is not valid,
-     * or with status {@code 404 (Not Found)} if the client is not found,
-     * or with status {@code 500 (Internal Server Error)} if the client couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated client, or with status {@code 400 (Bad Request)} if the
+     *         client is not valid, or with status {@code 404 (Not Found)} if the
+     *         client is not found, or with status
+     *         {@code 500 (Internal Server Error)} if the client couldn't be
+     *         updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/clients/{id}", consumes = "application/merge-patch+json")
@@ -169,7 +176,8 @@ public class ClientResource {
      * {@code GET  /clients} : get all the clients.
      *
      * @param pageable the pagination information.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of clients in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
+     *         of clients in body.
      */
     @GetMapping("/clients")
     @PreAuthorize(
@@ -201,7 +209,8 @@ public class ClientResource {
      * {@code GET  /clients/:id} : get the "id" client.
      *
      * @param id the id of the client to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the client, or with status {@code 404 (Not Found)}.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the client, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/clients/{id}")
     @PreAuthorize(
